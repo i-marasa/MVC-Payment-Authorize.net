@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "ASP.NET MVC - Payment Process";
+}
+
+<div class="jumbotron">
+    <h1>Payment Gateway for ASP.NET MVC</h1>
+    <p class="lead">Make easly Payment Processes using <a target="_blank" href="http://Authorize.Net">Authorize.Net</a> Payment Gateway integrated with ASP.NET MVC</p>
+</div>
+@using (Html.BeginForm("PaymentProcess", "Home", FormMethod.Post))
+{
+<div class="row">
+
+    <div class="col-sm-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Billing Address
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Name</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control input-sm" name="FirstName" placeholder="First Name" required />
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-sm" name="LastName" placeholder="Last Name" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control input-sm" name="Address1" required placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <input type="text" class="form-control input-sm" name="Address2" placeholder="Address" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Postcode</label>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control input-sm" name="Postcode" placeholder="ZIP Code" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Phone</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-sm" name="Phone" placeholder="Phone Number" required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Cridet Card Information
+            </div>
+            <div class="panel-body">
+                <div class="text-center" style="margin-bottom:10px">
+                    <img src="@Url.Content("~/images/credit-card-logos.png")" class="" style="max-width:280px;" />
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Amount</label>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control input-sm" name="Amount" placeholder="Price" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Card Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control input-sm" name="CardNumber" placeholder="Ex. 4111111111111111" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Card Code</label>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control input-sm" name="CardCode" placeholder="Security No." required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Expire Date</label>
+                        <div class="col-sm-2">
+                            <select class="form-control input-sm" name="Month" required>
+                                <option value="">Month</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control input-sm" name="Year" required>
+                                <option value="">Year</option>
+                                <option value="17">2017</option>
+                                <option value="18">2018</option>
+                                <option value="19">2019</option>
+                                <option value="20">2020</option>
+                                <option value="21">2021</option>
+                                <option value="22">2022</option>
+                                <option value="23">2023</option>
+                                <option value="24">2024</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="@ViewBag.css">
+                @Html.Raw(ViewBag.Msg)
+            </div>
+            <div class="well well-sm text-center">
+
+                <button type="submit" class="btn btn-primary">Submit Order</button>
+            </div>
+        </div>
+    </div>
+}
