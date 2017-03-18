@@ -3,6 +3,7 @@ Make easly Payment Processes using [Authorize.Net](https://Authorize.Net/)  Paym
 
 This repository contains simple mvc form which demonstrate Payment Transactions using Authorize.Net .NET SDK
 
+![alt tag](http://image.prntscr.com/image/2b5a3e66a2d6485885f0dcacef82d08e.png)
 
 Use Authorize.Net SDK to integrate with the Authorize.Net AIM, SIM, ARB and CIM APIs for Payment Transactions, Recurring Billing and Customer Payment Profiles.
 
